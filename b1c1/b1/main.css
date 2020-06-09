@@ -1,0 +1,277 @@
+@charset "utf-8";
+
+/* 메인콘텐츠 */
+.vs {
+    clear: both;
+    width: 100%;
+    overflow: hidden;
+}
+
+.ban {
+    clear: both;
+    width: 400%;
+}
+
+.ban li {
+    width: 25%;
+    margin: 0 auto;
+    float: left;
+}
+
+.tit_tank {
+    position: relative;
+    display: block;
+    height: 475px;
+}
+
+.tit_box {
+    position: absolute;
+    left: 800px;
+    top: 200px;
+}
+
+.tit_box h2 {
+    color: #fff;
+    font-size: 36px;
+    font-weight: bold;
+    height: 55px;
+}
+
+.tit_box p {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+.page {
+    clear: both;
+}
+
+.page_tit_s,
+.page_tit_l,
+.page_com,
+.page_tit_m {
+    text-align: center;
+    padding: 15px;
+}
+
+.page_tit_l {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.page_tit_s {
+    padding-top: 40px;
+    font-size: 18px;
+}
+
+.page_tit_m {
+    padding-top: 150px;
+    font-size: 36px;
+}
+
+.page_com {
+    padding-bottom: 40px;
+    font-size: 16px;
+}
+
+.lst1 {
+    clear: both;
+}
+
+.lst1 li {
+    float: left;
+    margin-right: 310px;
+    height: 350px;
+    width: 220px;
+    overflow: hidden;
+    opacity: 0.85;
+    transition: 0.5s
+}
+
+.lst1 li:hover {
+    opacity: 1.0;
+}
+
+.lst1 li:nth-child(3n) {
+    margin-right: 0;
+}
+
+.item_tit {
+    font-size: 26px;
+    color: black;
+    text-align: center;
+    display: block;
+    height: 50px;
+    line-height: 45px;
+    transition: 0.5s;
+}
+
+.lst1 li:hover .item_tit {
+    color: deeppink;
+    height: 60px;
+    line-height: 65px;
+}
+
+.lst1 li a img {
+    transform: scale(1);
+    transition: 0.5s
+}
+
+.lst1 li :hover img {
+    transform: scale(1.2);
+}
+
+.item_tit2 {
+    font-size: 16px;
+    color: black;
+    text-align: center;
+    display: block;
+    height: 50px;
+    line-height: 45px;
+}
+
+.item_com {
+    font-size: 15px;
+    margin-right: 0;
+    color: black;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.item_more {
+    text-align: center;
+    padding-top: 15px;
+    transition: 0.5s;
+}
+
+.item_more:hover {
+    color: deeppink;
+}
+
+.lst2 {
+    clear: both;
+}
+
+.lst2 li {
+    float: left;
+    margin-right: 93px;
+    height: 400px;
+    width: 250px;
+    overflow: hidden;
+}
+
+.lst2 li .item_tit2 {
+    transition: 0.5s;
+}
+
+.lst2 li:hover .item_tit2 {
+    font-size: 1.04em;
+    height: 60px;
+    line-height: 75px;
+}
+
+.lst2 li:nth-child(4n) {
+    margin-right: 0;
+}
+
+.lst2 li a img {
+    transform: scale(1);
+    transition: 0.5s
+}
+
+.lst2 li :hover img {
+    transform: scale(1.2);
+}
+
+.more {
+    transition: 0.5s;
+    display: inline;
+}
+
+.more:hover {
+    color: deeppink;
+}
+
+.lst3 {
+    clear: both;
+}
+
+.lst3 li {
+    float: left;
+    margin-right: 82px;
+    height: 470px;
+    width: 370px;
+    overflow: hidden;
+}
+
+.lst3 li a img {
+    transform: scale(1);
+    transition: 0.5s;
+}
+
+.lst3 li:hover img {
+    transform: scale(1.2);
+}
+
+.lst3 li:nth-child(3n) {
+    margin-right: 0;
+}
+
+.item_tit3 {
+    font-size: 26px;
+    color: black;
+    text-align: center;
+    display: block;
+    height: 50px;
+    line-height: 45px;
+    transition: 0.5s;
+}
+
+.lst3 li:hover .item_tit3 {
+    height: 65px;
+    line-height: 85px;
+}
+
+.tuto_box {
+    position: relative;
+    margin-top: 45px;
+}
+
+.tuto_box_in {
+    position: absolute;
+    left: 850px;
+    top: 100px;
+}
+
+.tuto_box_in h4 {
+    font-size: 36px;
+    color: black;
+    height: 80px;
+}
+
+.tuto_box_in p {
+    height: 150px;
+}
+
+.more {
+    text-decoration: underline;
+}
+
+.tuto_vs {
+    clear: both;
+    width: 100%;
+    overflow: hidden;
+}
+
+.tuto_vs_ban {
+    clear: both;
+    width: 800%;
+}
+
+.tuto_vs_ban li {
+    width: 12.5%;
+    float: left;
+}

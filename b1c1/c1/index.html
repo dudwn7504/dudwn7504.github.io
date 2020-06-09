@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타디자인치과-메인홈</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        * {margin: 0; padding: 0;}
+        body, html {width: 100%;}
+        ul {list-style: none;}
+        a {text-decoration: none;}
+    </style>
+<link href="http://apis.map.daum.net/favicon.ico" rel="shortcut icon"> 
+
+<meta name="viewport" content="width=720">
+
+<meta property="og:type" content="website">
+
+<meta property="og:title" content="Daum 지도 API">
+
+<link rel="stylesheet" type="text/css" href="https://s1.daumcdn.net/svc/attach/U03/cssjs/mapapidoc/1421136453605/service.min.css">
+
+<style>
+
+body { background:white; }
+
+</style>
+
+<script type="text/javascript" src="http://dmaps.daum.net/map_js_init/v3.js"></script>
+
+<script type="text/javascript" src="http://s1.daumcdn.net/svc/original/U03/cssjs/jquery/jquery-1.11.0.js"></script>
+
+<script type="text/javascript" src="http://s1.daumcdn.net/svc/original/U0301/cssjs/JSON-js/fc535e9cc8/json2.min.js"></script>
+</head>
+<!--[if gte IE 10]><!-->
+
+    <body class="web guide" data-page_section="web" data-page_type="guide" data-title="Daum 지도 Web API 가이드">
+
+        <!--<![endif]-->
+        
+        <!--[if lte IE 7]>
+        
+        <body class="very_low web guide" data-page_section="web" data-page_type="guide" data-title="Daum 지도 Web API 가이드">
+        
+        <![endif]-->
+        
+        <!--[if lte IE 9]>
+        
+        <body class="low web guide" data-page_section="web" data-page_type="guide" data-title="Daum 지도 Web API 가이드">
+        
+        <![endif]-->
+    <div class="container">
+        <header class="hdr">
+            <!-- (div.inner>nav.main_menu>ul>li.menu1*5>a.sel1{메인메뉴$}+(ul.sub>li*4>a))
+            div.hdr_wrap>nav#tnb.inner>(a.logo>img)+ul.top>li*3>a+div.hdr_wrap>nav#gnb.inner>input#ck_item+label+(div.lst>label+h2+(ul.sitemap>li*5>(h3+dl*3>dt+(dd*4>a)))) -->
+            <div class="hdr_top_wrap">
+                <nav id="tnb" class="inner">
+                    <a href="index.html" class="logo"><img src="./img_source/main_header_logo.png" alt="메인로고"></a>
+                    <ul class="top">
+                        <li><a href="#">원격</a></li>
+                        <li><a onclick="login_call()">로그인</a></li>
+                        <li><a href="join.html">회원가입</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <script>
+                function login_call(){
+                    window.open("login_pop.html", "child", "width=1200, height=700")
+                }
+            </script>
+            <div class="hdr_bottom_wrap">
+                <nav class="main_menu">
+                    <ul class="inner">
+                    <li class="menu1">
+                        <a class="sel1">치아교정</a>
+                        <div class="sub1">
+                            <ul class="sub_menu">
+                                <li>
+                                    <dl class="sub">
+                                        <dt class="sub_tit">증상별교정</dt>
+                                        <dd><a href="">돌출입</a></dd>
+                                        <dd><a href="">덧니</a></dd>
+                                        <dd><a href="">벌어진이</a></dd>
+                                        <dd><a href="">비대칭</a></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl class="sub">
+                                        <dt class="sub_tit">특별함</dt>
+                                        <dd><a href="">발치없는 교정</a></dd>
+                                        <dd><a href="">수술없는 교정</a></dd>
+                                        <dd><a href="">빠른 교정</a></dd>
+                                        <dd><a href="">턱관절 교정</a></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl class="sub">
+                                        <dt class="sub_tit">연령별 교정</dt>
+                                        <dd><a href="">어린이</a></dd>
+                                        <dd><a href="">부모님</a></dd>
+                                        <dd><a href="" ">장치별 교정</a></dd>
+                                    </dl>
+                                    
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3 class="sub_tit">치아교정</h3>
+                                        <img src="./img_source/main_img_01-1.jpg" alt="">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="menu1">
+                            <a class="sel1">수술/시술</a>
+                            <div class="sub1">
+                            <ul class="sub_menu">
+                                <li>
+                                    <dl class="sub">
+                                        <dt class="sub_tit">임플란트</dt>
+                                        <dd><a href="">전체 임플란트</a></dd>
+                                        <dd><a href="">틀니 임플란트</a></dd>
+                                        <dd><a href="">보함 임플란트</a></dd>
+                                        <dd><a href="">고난이도 임플란트</a></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl class="sub">
+                                        <dt class="sub_tit">수술</dt>
+                                        <dd><a href="">사랑니 발치/수술</a></dd>
+                                        <dd><a href="">발치 즉시 임플란트</a></dd>
+                                        <dd><a href="">전신질환 임플란트</a></dd>
+                                        <dd><a href="">특별함</a></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl class="sub">
+                                        <dt class="sub_tit">치아성형</dt>
+                                        <dd><a href="">라미네이트</a></dd>
+                                        <dd><a href="">올세라믹</a></dd>
+                                        <dd><a href="">치아미백</a></dd>
+                                        <dd><a href="">잇몸성형</a></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3 class="sub_tit">임플란트 수술/시술</h3>
+                                        <img src="./img_source/sub_copy_240.jpg" alt="">
+                                    </div>
+                                </li>
+                            </ul>
+                            </div>
+                    </li>    
+                    <li class="menu1">
+                            <a class="sel1">진료</a>
+                            <div class="sub1">
+                            <ul class="sub_menu">
+                                <li>
+                                    <dl class="sub">
+                                        <dt class="sub_tit">일반진료</dt>
+                                        <dd><a href="">자연치아 살리기</a></dd>
+                                        <dd><a href="">신경치료</a></dd>
+                                        <dd><a href="">잇몸치료</a></dd>
+                                        <dd><a href="">보철치료</a></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl class="sub">
+                                        <dt class="sub_tit">특수진료</dt>
+                                        <dd><a href="">수면치료</a></dd>
+                                        <dd><a href="">예방치료</a></dd>
+                                        <dd><a href="">턱관절 치료</a></dd>
+                                        <dd><a href="">원데이 치료</a></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl class="sub">
+                                        <dt class="sub_tit">소아치과</dt>
+                                        <dd><a href="">소아예방</a></dd>
+                                        <dd><a href="">소아충치</a></dd>
+                                        <dd><a href="">소아교정</a></dd>
+                                        <dd><a href="">소아수면치료</a></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3 class="sub_tit">진료</h3>
+                                        <img src="./img_source/main_img_01.jpg" alt="">
+                                    </div>
+                                </li>
+                            </ul>
+                            </div>
+                    </li>
+                    <li class="menu1">
+                            <a class="sel1">디자인스타 소개</a>
+                        <div class="sub1">
+                            <ul class="sub_menu">
+                                <li>
+                                    <dl class="sub">
+                                        <dt class="sub_tit">디자인스타 소개</dt>
+                                        <dd><a href="">의료진소개</a></dd>
+                                        <dd><a href="">학술활동</a></dd>
+                                        <dd><a href="">재료실명제</a></dd>
+                                        <dd><a href="">진료 보증제</a></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl class="sub">
+                                        <dt class="sub_tit">소통하기</dt>
+                                        <dd><a href="">상담/예약</a></dd>
+                                        <dd><a href="">치료후기</a></dd>
+                                        <dd><a href="">공지사항</a></dd>
+                                        <dd><a href="">언론속의 디자인스타</a></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl class="sub">
+                                        <dt class="sub_tit">기타사항</dt>
+                                        <dd><a href="">첨단장비</a></dd>
+                                        <dd><a href="">1:1 클린시스템</a></dd>
+                                        <dd><a href="">오시는길/진료시간</a></dd>
+                                        <dd><a href="">치료 전후사진</a></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3 class="sub_tit">소개</h3>
+                                        <img src="./img_source/m_main04_bg-1.jpg" alt="">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                   <!--</li>
+                         <li class="menu1">
+                            <h3 class="sel1">메인메뉴2</h3>
+                            <dl class="sub">
+                                <dt>뷰메뉴2</dt>
+                                <dd><a href="">하위메뉴1</a></dd>
+                                <dd><a href="">하위메뉴2</a></dd>
+                                <dd><a href="">하위메뉴3</a></dd>
+                                <dd><a href="">하위메뉴4</a></dd>
+                            </dl>
+                        </li>
+                        <li class="menu1">
+                            <h3 class="sel1">메인메뉴3</h3>
+                            <dl class="sub">
+                                <dt>뷰메뉴3</dt>
+                                <dd><a href="">하위메뉴1</a></dd>
+                                <dd><a href="">하위메뉴2</a></dd>
+                                <dd><a href="">하위메뉴3</a></dd>
+                                <dd><a href="">하위메뉴4</a></dd>
+                            </dl>
+                        </li>
+                        <li class="menu1">
+                            <h3 class="sel1">메인메뉴4</h3>
+                            <dl class="sub">
+                                <dt>뷰메뉴4</dt>
+                                <dd><a href="">하위메뉴1</a></dd>
+                                <dd><a href="">하위메뉴2</a></dd>
+                                <dd><a href="">하위메뉴3</a></dd>
+                                <dd><a href="">하위메뉴4</a></dd>
+                            </dl>
+                        </li>
+                        <li class="menu1">
+                            <h3 class="sel1">메인메뉴5</h3>
+                            <dl class="sub">
+                                <dt>뷰메뉴5</dt>
+                                <dd><a href="">하위메뉴1</a></dd>
+                                <dd><a href="">하위메뉴2</a></dd>
+                                <dd><a href="">하위메뉴3</a></dd>
+                                <dd><a href="">하위메뉴4</a></dd>
+                            </dl>
+                        </li> -->
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="content">
+            <input type="radio" name="main_pic" id="pic1" class="ra" checked>
+            <input type="radio" name="main_pic" id="pic2" class="ra">
+            <input type="radio" name="main_pic" id="pic3" class="ra">
+            <div class="lb_box">
+                <label for="pic1" class="tab_btn1">1</label>
+                <label for="pic2" class="tab_btn2">2</label>
+                <label for="pic3" class="tab_btn3">3</label>
+            </div>
+            <figure class="vs">
+                <ul class="ban_box1">
+                    <li class="item1"><a href="" for="pic1"><img src="./img_source/main_slid04.jpg" alt=""></a></li>
+                </ul>
+                <ul class="ban_box2">
+                    <li class="item1"><a href="" for="pic2"><img src="./img_source/main_slid04_copy_mini.jpg" alt=""></a></li>
+                </ul>
+                <ul class="ban_box3">
+                    <li class="item1"><a href="" for="pic3"><img src="./img_source/main_slid_bg03_1.jpg" alt=""></a></li>
+                </ul>
+            </figure>
+            <div class="con_wrap">
+                <section class="page" id="page1">
+                    <ul class="row">
+                        <li class="col3 violet1">
+                            <h3 class="grn_tit">치아교정</h3>
+                            <img src="./img_source/main_img_01-1.jpg" alt="">
+                            <p class="grn_com">일반교정부터 수술교정까지 다양한 증례를 치료합니다.</p>
+                        </li>
+                        <li class="col3 violet2">
+                            <h3 class="grn_tit">임플란트/수술</h3>
+                            <img src="./img_source/sub_copy_240 -01.jpg" alt="">
+                            <p class="grn_com">임플란트 뿐만 아니라 다양한 구강내 소수술이 가능합니다.</p>
+                        </li>
+                        <li class="col3 violet1">
+                            <h3 class="grn_tit">치아성형</h3>
+                            <img src="./img_source/main_img_03.jpg" alt="">
+                            <p class="grn_com">최소치아삭제로 아름다운 미소를 디자인합니다.</p>
+                        </li>
+                        <li class="col3 violet2">
+                            <h3 class="grn_tit">일반진료</h3>
+                            <img src="./img_source/sub_copy_241-1-1.jpg" alt="">
+                            <p class="grn_com">놓치는 부분 없이 꼼꼼하게 진료합니다.</p>
+                        </li>
+                        <li class="col6 violet2">
+                            <h3 class="grn_tit">디자인스타치과 진료시간</h3>
+                            <ul class="wt">
+                                <li>
+                                    <p>월,수(야간)</p>
+                                    <p>화,목,금</p>
+                                    <p>토요일</p>
+                                    <p>점심시간(월-금)</p>
+                                </li>
+                                <li>
+                                    <p>AM 10:00-PM 9:00</p>
+                                    <p>AM 10:00-PM 7:00</p>
+                                    <p>AM  9:00-PM 2:00</p>
+                                    <p>PM  1:00-PM 2:00<br>(공휴일,일요일 휴진)</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="col6 violet1">
+                            <h3 style="margin-bottom: 25px;" class="grn_tit">디자인스타치과 상담</h3>
+                            <img src="./img_source/main_phone1.jpg" alt="">
+                            <div class="grn_btn">
+                            <a href=""><input type="button" value="온라인상담"></a>
+                            <a href=""><input type="button" value="카카오톡"></a>
+                            <a href=""><input type="button" value="진료예약"></a>
+                        </div>
+                        </li>
+                    </ul>
+                </section>
+                <section class="map_canvas">
+                    <div class="map_area">
+                        <h3 class="map_way">오시는길</h3>
+                        <img src="./images/map.png" alt="" style="margin-left:150px;">
+                        <div id="map" style="margin-left:120px;	margin-top:50px; width:800px;height:600px; background:white; ">
+
+                        </div>
+                        
+                        <script>
+                        
+                        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                        
+                            mapOption = { 
+                        
+                                center: new daum.maps.LatLng(37.542728,126.951910), // 지도의 중심좌표
+                                // 위도:37.542728, 경도:126.951910
+                                level: 3 // 지도의 확대 레벨
+                        
+                            };
+                        
+                         
+                        
+                        var map = new daum.maps.Map(mapContainer, mapOption);
+                        
+                         
+                        
+                        // 마커가 표시될 위치입니다 
+                        
+                        var markerPosition  = new daum.maps.LatLng(37.542728,126.951910); 
+                        
+                         
+                        
+                        // 마커를 생성합니다
+                        
+                        var marker = new daum.maps.Marker({
+                        
+                            position: markerPosition
+                        
+                        });
+                        
+                         
+                        
+                        // 마커가 지도 위에 표시되도록 설정합니다
+                        
+                        marker.setMap(map);
+                        
+                         
+                        
+                        var iwContent = '<div style="padding:5px;">디자인스타치과 <br><a href="" style="color:blue" target="_blank"></a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                        
+                            iwPosition = new daum.maps.LatLng(37.542728,126.951910); //인포윈도우 표시 위치입니다
+                        
+                         
+                        
+                        // 인포윈도우를 생성합니다
+                        
+                        var infowindow = new daum.maps.InfoWindow({
+                        
+                            position : iwPosition, 
+                        
+                            content : iwContent 
+                        
+                        });
+                        
+                          
+                        
+                        // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+                        
+                        infowindow.open(map, marker);
+                        
+                        </script>
+                        
+                        <script type="text/javascript" src="http://m1.daumcdn.net/tiara/js/td.min.js"></script>
+                        
+                        <script type="text/javascript">
+                        
+                        var _tiq = 'undefined' !== typeof _tiq ? _tiq : [];
+                        
+                            window._tiq = _tiq;
+                        
+                            _tiq.push(['__trackPageview']);
+                        
+                        </script>
+                        
+                        <script type="text/javascript" src="http://s1.daumcdn.net/svc/attach/U03/cssjs/mapapidoc/1421136453605/service.min.js">
+                        
+                        </script>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="ftr">
+            <div class="ft_a">
+            <div class="ft_wrap">
+                <nav class="fnb" id="fnb1">
+                    <ul class="left">
+                        <li><a href="">디자인스타치과 소개</a></li>
+                        <li><a href="">치아교정</a></li>
+                        <li><a href="">임플란트/수술</a></li>
+                        <li><a href="">치아성형</a></li>
+                        <li><a href="">소아치과</a></li>
+                    </ul>
+                    <ul class="right">
+                        <li><a href="">일반진료</a></li>
+                        <li><a href="">특수진료</a></li>
+                        <li><a href="">소통하기</a></li>
+                    </ul>
+                </nav>
+                </div>
+            </div>
+            <div class="ft_b">
+            <div class="ft_wrap">
+                <nav class="fnb" id="fnb2">
+                    <ul class="fn">
+                        <li><a href="">비급여진료비용</a></li>
+                        <li><a href="">환자권리장전</a></li>
+                        <li><a href="">이용약관</a></li>
+                        <li><a href="">개인정보처리방침</a></li>
+                        <li><a href="">정보공개</a></li>
+                        <li><a href="">정보무단수집거부공개</a></li>
+                        <li><a href="">뷰어다운로드</a></li>
+                    </ul>
+                </nav>
+                </div>      
+            </div>
+            <div class="ft_c">
+            <div class="ft_wrap">
+                <nav class="fnb" id="fnb3">
+                <ul class="info">
+                    <li class="copy">
+                        <p>디자인스타치과의원</p>
+                        <p>서울시 마포구 마포대로92 효성해링턴스퀘어 B동 5층</p>
+                        <p>Copyright 2020 Design star denstal clinic. All Rights Reserved</p>
+                        <p>사이트이용약관 / 개인정보 처리방침</p>
+                    </li>
+                    <li class="ft_logo">
+                        <a href="index.html"><img src="./img_source/footer_logo_retina.png" alt=""></a>
+                    </li>
+                </ul>
+                </nav>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

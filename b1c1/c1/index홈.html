@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타디자인치과-메인홈</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        * {margin: 0; padding: 0;}
+        body, html {width: 100%;}
+        ul {list-style: none;}
+        a {text-decoration: none;}
+        .content {clear: both;}
+        
+        .inner {clear: both; float: left;}
+        
+        .hdr {clear: both; width: 100%; border-bottom: 1px solid rgb(202, 202, 202);}
+        .hdr_top_wrap {clear: both; width: 1100px; margin: 20px auto;}
+        .inner {clear: both; width: 100%; margin-bottom: 15px;}
+        .hdr_bottom_wrap {clear: both; width: 1100px; margin: 10px auto;}
+        .logo {display: block; width: 300px; margin: 0 auto;}
+        .main_menu .menu1 {float: left; width: 220px;}
+        #tnb {position: relative;}
+        #tnb .top {display: block; position: absolute; top: 0; right: 0;}
+        #tnb .top li {float: left; margin-left: 15px; margin-top: 22px;}
+        #tnb .top li a {color: black;}
+        .menu1 {margin-top: 15px; height: 30px; line-height: 30px;}
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <header class="hdr">
+            <!-- (div.inner>nav.main_menu>ul>li.menu1*5>a.sel1{메인메뉴$}+(ul.sub>li*4>a))
+            div.hdr_wrap>nav#tnb.inner>(a.logo>img)+ul.top>li*3>a+div.hdr_wrap>nav#gnb.inner>input#ck_item+label+(div.lst>label+h2+(ul.sitemap>li*5>(h3+dl*3>dt+(dd*4>a)))) -->
+            <div class="hdr_top_wrap">
+                <nav id="tnb" class="inner">
+                    <a href="index.html" class="logo"><img src="./img_source/main_header_logo.png" alt="메인로고"></a>
+                    <ul class="top">
+                        <li><a href="">원격</a></li>
+                        <li><a href="">로그인</a></li>
+                        <li><a href="">회원가입</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="hdr_bottom_wrap">
+                <nav class="main_menu">
+                    <ul class="inner">
+                        <li class="menu1">
+                            <a href="" class="sel1">메인메뉴1</a>
+                            <ul class="sub">
+                                <li><a href="">서브메뉴1</a></li>
+                                <li><a href="">서브메뉴2</a></li>
+                                <li><a href="">서브메뉴3</a></li>
+                                <li><a href="">서브메뉴4</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu1">
+                            <a href="" class="sel1">메인메뉴2</a>
+                            <ul class="sub">
+                                <li><a href="">서브메뉴1</a></li>
+                                <li><a href="">서브메뉴2</a></li>
+                                <li><a href="">서브메뉴3</a></li>
+                                <li><a href="">서브메뉴4</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu1">
+                            <a href="" class="sel1">메인메뉴3</a>
+                            <ul class="sub">
+                                <li><a href="">서브메뉴1</a></li>
+                                <li><a href="">서브메뉴2</a></li>
+                                <li><a href="">서브메뉴3</a></li>
+                                <li><a href="">서브메뉴4</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu1">
+                            <a href="" class="sel1">메인메뉴4</a>
+                            <ul class="sub">
+                                <li><a href="">서브메뉴1</a></li>
+                                <li><a href="">서브메뉴2</a></li>
+                                <li><a href="">서브메뉴3</a></li>
+                                <li><a href="">서브메뉴4</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu1">
+                            <a href="" class="sel1">메인메뉴5</a>
+                            <ul class="sub">
+                                <li><a href="">서브메뉴1</a></li>
+                                <li><a href="">서브메뉴2</a></li>
+                                <li><a href="">서브메뉴3</a></li>
+                                <li><a href="">서브메뉴4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="content">
+            (figure.vs>ul.ban_box*3>li.item$*3>a>img)+(div.con_wrap>(section.page#page1>ul.row>li.col3*4)+(section.map_canvas>div.map_area))
+        </main>
+
+        <footer class="ftr">
+            (div.ft_wrap>nav.fnb#fnb1>(ul.left>li*5>a)+ul.right>li*4>a)+(div.ft_wrap>nav.fnb#fnb2>ul.fn>li*7>a)+(div.ft_wrap>ul.info>(li.copy>p*2)+li>a*2)
+        </footer>
+    </div>
+</body>
+</html>

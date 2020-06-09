@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* 메인홈 영역 */
+.row {margin-top: 100px;}
+        .grn_tit { display: block; font-size: 18px; font-weight: bold; 
+        text-align: center; margin: 10px; padding-top: 15px;}
+        .grn_com {display: block; margin-top: 20px; height: 20px; line-height: 20px;}
+        .col3 {width: 245px; margin: 15px; height: 250px;}
+        .col6 {width: 520px; margin: 15px; height: 205px; margin-bottom: 100px;}
+        .row li {float: left;}
+        .row li img {display: block; width: 200px; margin: 0 auto;}
+
+        .violet1 { background-color: rgb(226, 142, 243);}
+        .violet2 {background-color: rgb(125, 55, 190);}
+        .wt {text-align: center; width: 352px; margin: 15px auto;}
+        .wt li {margin: 0 15px; font-size: 15px;}
+        .grn_btn {width: 204px; margin: 25px auto;}
+
+        .map_area {margin-top: 70px;}
+        .map_way {display: block; text-align: center; font-size: 40px;}

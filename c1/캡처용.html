@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인홈화면</title>
+</head>
+<body>
+    <div class="container">
+        <header class="hdr">
+            (div.hdr_top_wrap>nav#tnb.inner>(a.logo>img)+ul.top>li*3>a)+(div.hdr_bottom_wrap>nav.main_menu>ul>li.menu1*5>a.sel1{메인메뉴$}+(ul.sub>li*4>a{서브메뉴$}))
+        </header>
+
+
+        <main class="content">
+            (figure.vs>ul.ban_box*3>li.item$*3>a>img)+(div.con_wrap>(section.page#page1>ul.row>li.col3*4)+(section.map_canvas>div#map_area)) <!-- 메인홈화면 -->
+            div.logbox>h3.log_tit+p.log_com+(form.logbox_in>fieldset>input*3)+a+span <!-- 로그인화면 -->
+            section.join_tank>(div.join_tit>h2)+(form.join_form>fieldset>div.join_con$*11>label+input) <!-- 회원가입화면 -->
+        </main>
+
+
+        <footer class="ftr">
+            (div.ft_wrap>nav.fnb#fnb1>(ul.left>li*5>a)+ul.right>li*4>a)+(div.ft_wrap>nav.fnb#fnb2>ul.fn>li*7>a)+(div.ft_wrap>ul.info>(li.copy>p*2)+li>a*2)
+        </footer>
+    </div>
+</body>
+</html>

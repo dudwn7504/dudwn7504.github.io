@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="title" content="입생로랑 브랜드">
+    <meta name="subject" content="입생로랑 뷰티 공식 온라인몰에 오신 것을 환영합니다.">
+    <meta name="author" content="Mr. Jeong">
+    <meta name="keyword" content="화장품, 뷰티, 쇼핑몰, 브랜드, 입생로랑">
+    <meta property="og:title" content="입생로랑 브랜드">
+    <meta property="og:description" content="입생로랑 뷰티 공식 온라인몰에 오신 것을 환영합니다.">
+    <meta property="og:image" content="https://dudwn7504.github.io/b1/index.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>입생로랑-PRODUCT</title>
+    <!-- 16x16, 24x24, 32x32, 48x48, 64x64 -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.png">
+    <!-- 아이폰의 2.0 이상일 경우 -->
+    <link rel="apple-touch-icon-precomposed" href="favicon-152.png">
+    <!-- IE를 사용하는 경우 -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon-144.png">
+    <!-- 파이어폭스, 오페라(크롬 일부)의 경우 썸네일로 제공될때 -->
+    <link rel="icon" href="favicon-16.png" sizes="16x16">
+    <link rel="icon" href="favicon-32.png" sizes="32x32">
+    <link rel="icon" href="favicon-48.png" sizes="48x48">
+    <link rel="icon" href="favicon-64.png" sizes="64x64">
+    <link rel="icon" href="favicon-128.png" sizes="128x128">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR" rel="stylesheet">
+    <!-- 최적화 -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="./xeicon/xeicon.min.css">
+    <link rel="stylesheet" href="common.css">
+    
+
+    
+    <style>
+    .tank {
+    position: relative;
+    width: 1280px; margin: 0 auto;
+}
+    .tit_box {
+    position: absolute;
+    left: 800px;
+    top: 100px;
+}
+
+.tit_box h2 {
+    color: #fff;
+    font-size: 36px;
+    font-weight: bold;
+    height: 55px;
+}
+
+.tit_box p {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.3;}
+    .bread {clear: both; width: 1280px; margin: 0 auto;}
+    .bread li {float: left;}
+    .bread li a, .bread li span {display:block; color: black; padding-right: 18px; line-height: 32PX;}
+    .bread li a::after {content: ">"; margin-left: 20px;}
+    .vs {clear: both; width: 100%; background-color: black;}
+    .vs .ban, .ban li {width: 100%;}
+    .ban li img {display: block; margin: 0 auto;}
+    .item_box {clear: both;}
+    .item_box li img {display: block; width: 260px;}
+    .item_box ul {clear: both; float: left; display: none;}
+    .item_box li { float: left; width: 260px; margin-right: 80px; text-align: center; margin-bottom: 130px;}
+    .item_box li h4 { display: block; height: 28px; font-size: 18px; padding-top: 15px; color: black;}
+    .item_box li:nth-child(4n) {margin-right: 0;}
+    .item_box li p {font-size: 14px;}
+    .ra_item {display: none;}
+    #ra1:checked ~ .item_box ul {display: block;}
+    #ra2:checked ~ .item_box .item1 {display: block;}
+    #ra3:checked ~ .item_box .item2 {display: block;}
+    #ra4:checked ~ .item_box .item3 {display: block;}
+    #ra5:checked ~ .item_box .item4 {display: block;}
+    #ra6:checked ~ .item_box .item5 {display: block;}
+
+    #ra1:checked ~ .lb_box .btn1 {color: deeppink;}
+    #ra2:checked ~ .lb_box .btn2 {color: deeppink;}
+    #ra3:checked ~ .lb_box .btn3 {color: deeppink;}
+    #ra4:checked ~ .lb_box .btn4 {color: deeppink;}
+    #ra5:checked ~ .lb_box .btn5 {color: deeppink;}
+    #ra6:checked ~ .lb_box .btn6 {color: deeppink;}
+    
+    .lb_box {clear: both;}
+    .lb_box li {float: left;}
+    .lb_box li label {display: block; width: 90px; height: 36px; line-height: 36px;
+        text-align: center; cursor: pointer; margin: 30px 0; transition: 0.5s;}
+    .btn_groub li:hover label {color: deeppink;}
+    
+    /* 레이어 팝업  */
+    .it_pop { position:fixed; width: 100vw; height: 100vh; 
+    z-index:9999; left: 0; top: 0; background:rgba(233, 201, 201, 0.8); display:none; }
+    .it_pop:target { display:block; }
+    .item_pop { width:800px; height:600px; margin:50px auto; 
+    background:rgba(250,250,250,0.8); }
+    .pop_head { clear:both; width: 100%; height: 38px; line-height: 38px; background:#333; color:#fff; }
+    .pop_tit { float:left; padding-left:24px;}
+    .pop_close { display:block; float:right; color:#fff; width: 38px; height: 38px; text-align:center; }
+    .pop_item_box { clear:both; }
+    .pop_item_box img { display:block; width: 400px; height: 400px; margin: 20px auto; }
+    .pop_item_tit {font-size: 26px; margin-left: 15px;}
+    .pop_item_com {height: 20px; line-height: 35px; margin-left: 15px;}
+    
+    </style>
+    <!-- <script src="jquery-3.5.1.js"></script> <!-- 다운받은거 사용 -->
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> 서버에서 불러와서 사용 -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전 연결해서사용 -->
+    <script src="common.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header class="hd">
+            <div class="hd_top_wrap">
+                <nav class="tnb">
+                    <ul class="left">
+                        <li><a href="findshop.html">매장찾기</a></li>
+                        <li><a href="community.html">COMMUNITY</a></li>
+                    </ul>
+                    <ul class="right">
+                        <li><a href="login.html">LOGIN/JOIN</a></li>
+                        <li><a href="cart.html">CART<p class="count">1</p></a></li>
+                        <li><a href="mypage.html">MYPAGE</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="hd_bottom_wrap">
+                <nav class="gnb">
+                    <a href="index.html" class="logo"><img src="./font_icon/logo.png" alt="메인로고"></a>
+                    <ul class="menu">
+                        <li><a href="shop.html">SHOP</a></li>
+                        <li><a href="review.html">REVIEW</a></li>
+                        <li><a href="tutorior.html">TUTORIOR</a></li>
+                        <li><a href="event.html">EVENT</a></li>
+                    </ul>
+                    <a href="" class="search"><i class="xi-search"></i></i>SEARCH</a>
+                </nav>
+            </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+        </header>
+        <div class="bread">
+            <ul class="bc">
+                <li><a href="index.html">HOME</a></li>
+                <li><span>SHOP</span></li>
+            </ul>
+        </div>
+        <figure class="vs">
+            <ul class="ban">
+            <div class="tank">
+                <li><img src="./main/main_top/main6.jpg" alt="서브비주얼배너"></li>
+                <div class="tit_box">
+                    <h2 class="vs_tit">메이크업</h2>
+                    <p class="vs_com">자유반방한 세련미와 앞서가는 감성,<br>
+                    매혹적인 아름다움을 선사하는 럭셔리 뷰티
+                    </p>
+                </div>
+            </div>
+            </ul>
+        </figure>
+        <div class="contents">
+            <input type="radio" name="ra" id="ra1" class="ra_item" checked>
+            <input type="radio" name="ra" id="ra2" class="ra_item">
+            <input type="radio" name="ra" id="ra3" class="ra_item">
+            <input type="radio" name="ra" id="ra4" class="ra_item">
+            <input type="radio" name="ra" id="ra5" class="ra_item">
+            <input type="radio" name="ra" id="ra6" class="ra_item">
+            <div class="lb_box">
+                <ul class="btn_groub">
+                    <li><label for="ra1" class="btn1">전체</label></li>
+                    <li><label for="ra2" class="btn2">베스트셀러</label></li>
+                    <li><label for="ra3" class="btn3">페이스</label></li>
+                    <li><label for="ra4" class="btn4">립</label></li>
+                    <li><label for="ra5" class="btn5">아이</label></li>
+                    <li><label for="ra6" class="btn6">악세서리</label></li>
+                </ul>
+            </div>
+            <section class="item_box">
+                <ul class="item1">
+                    <li>
+                        <a href="#it1">
+                        <img src="./shop/bestseller/face2.jpg" alt="베스트셀러1">
+                        <h4>르 쿠션 엉크르 드 뽀</h4>
+                        <p>잉크 쿠션</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#it2">
+                        <img src="./shop/bestseller/lip1.png" alt="베스트셀러2">
+                        <h4>베르니 아 레브르</h4>
+                        <p>클래식 틴트</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#it3">
+                        <img src="./shop/bestseller/lip2.jpg" alt="베스트셀러3">
+                        <h4>따뚜아쥬 꾸뛰르</h4>
+                        <p>타투 틴트</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#it4">
+                        <img src="./shop/bestseller/lip3.jpg" alt="베스트셀러4">
+                        <h4>루쥬 쀠르 꾸뛰르 더 슬림</h4>
+                        <p>매트 립스틱</p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="item2">
+                    <li>
+                        <a href="#it5">
+                        <img src="./shop/face/face1.jpg" alt="페이스1">
+                        <h4>뚜쉬 에끌라 르땡 크림</h4>
+                        <p>르땡 크림 파운데이션</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#it6">
+                        <img src="./shop/face/face2.jpg" alt="페이스2">
+                        <h4>뚜쉬 에끌라 블러 프라이머</h4>
+                        <p>뚜쉬 에끌라 블러 프라이머 실버</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#it7">
+                        <img src="./shop/face/face3.jpg" alt="페이스3">
+                        <h4>3D 올오버 글로우</h4>
+                        <p>3D 올오버 글로우</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#it8">
+                        <img src="./shop/face/face4.jpg" alt="페이스4">
+                        <h4>올아워 세팅 파우더</h4>
+                        <p>올아워 파우더</p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="item3">
+                    <li>
+                        <a href="#it9">
+                        <img src="./shop/lip/lip5.jpg" alt="립1">
+                        <h4>따뚜아쥬 꾸뛰르 벨벳 틴트</h4>
+                        <p>벨벳 틴트</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#it10">
+                        <img src="./shop/lip/lip2.jpg" alt="립2">
+                        <h4>루쥬 볼뤼떼 샤인</h4>
+                        <p>팝아트 컬렉션</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#it11">
+                        <img src="./shop/lip/lip3.jpg" alt="립3">
+                        <h4>루쥬 쀠르 꾸뛰르</h4>
+                        <p>팝아트 걸렉션</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#it12">
+                        <img src="./shop/lip/lip4.jpg" alt="립4">
+                        <h4>루쥬 볼뤼떼 샤인</h4>
+                        <p>2020 스프링 룩</p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="item4">
+                    <li>
+                        <a href="#it13">
+                        <img src="./shop/eye/eye1.jpg" alt="아이1">
+                        <h4>꾸뛰르 팔레트</h4>
+                        <p>5 컬러 아이섀도 팔레트</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#it14">
+                        <img src="./shop/eye/eye2.jpg" alt="아이2">
+                        <h4>데생 드 르갸르 워터프루프</h4>
+                        <p>워터프루프 펜슬 아이라이너</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#it15">
+                        <img src="./shop/eye/eye4.jpg" alt="아이3">
+                        <h4>꾸뛰르 아이라이너</h4>
+                        <p>리퀴드 아이라이너</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#it16">
+                        <img src="./shop/eye/eye5.jpg" alt="아이4">
+                        <h4>마스카라 볼륨 에페 포 실 더 컬러</h4>
+                        <p>컬링 마스카라</p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="item5">
+                    <li>
+                        <a href="#it17">
+                        <img src="./shop/accessory/accessory1.jpeg" alt="악세서리1">
+                        <h4>르 쿠션 엉크르 드 뽀 어플리케이터</h4>
+                        <p>쿠션 어플리케이터</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#it18">
+                        <img src="./shop/accessory/accessory2.jpg" alt="악세서리2">
+                        <h4>컨투어링 브러쉬</h4>
+                        <p>브러쉬</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#it19">
+                        <img src="./shop/accessory/accessory3.jpg" alt="악세서리3">
+                        <h4>폴리싱 파운데이션 브러쉬</h4>
+                        <p>브러쉬</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#it20">
+                        <img src="./shop/accessory/accessory4.jpg" alt="악세서리4">
+                        <h4>올아워 파우더 스폰지</h4>
+                        <p>파우더 스폰지</p>
+                        <p>스폰지(2개입)</p>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <footer class="ft">
+            <div class="ft_top_wrap">
+                <div class="ft_wrap">
+                    <ul class="ft_col">
+                        <li>
+                            <h4 class="ft_tit">입생로랑 뷰티 고객 케어센터<br>(CONSUMER CARE CENTER)</h4>
+                            <p>
+                                <span class="ft_item">구매/배송/사이트 이용문의 080-835-0089</span>
+                                <span class="ft_tel">제품문의 080-347-0089</span>
+                                <span class="ft_tel">상담 시간: 월~금 9:30~17:30</span>
+                                <span class="ft_item">(토/일/공휴일 휴무)</span>
+                                <span class="ft_item">*점심시간: 12:30~13:30</span>
+                                <span class="ft_item">*이메일 문의를 이용하시면 보다 신속하게<br> 답변 받으실 수 있습니다.</span> 
+                                <span><a href="https://www.yslbeautykr.com/ko_KR/contact-us">이메일 문의</a></span>
+                            </p>    
+                        </li>
+                        <li>
+                            <h4 class="ft_tit">INFORMATION</h4>
+                            <p>
+                                <span class="ft_item">사업자명: 엘오케이(유)대표: 크리스티앙 마르코스 아르나이</span>
+                                <span class="ft_item">사업자 등록번호: 220-81-73483</span>
+                                <span class="ft_item">주소: 서울특별시 강남구 영동대로 517 아셈타워 31층</span>
+                                <span class="ft_item">통신판매업신고: 2012-서울강남-01663</span>
+                                <span class="ft_item">개인정보관리책임자: 서지영|고객케어센터: 080-835-0089</span>
+                                <span class="ft_item">© 2019 Yves Saint Laurent Cosmetics. All rights reserved.</span>
+                            </p>
+                        </li>
+                        <li>
+                            <h4 class="ft_tit">입생로랑</h4>
+                            <p>
+                                <p class="ft_logo">
+                                    <img src="./font_icon/logo.png" alt="하단로고">
+                                </p>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ft_bottom_wrap">
+                <div class="ft_wrap">
+                    <ul class="fnb">
+                        <li><a href="https://www.yslbeautykr.com/ko_KR/terms-conditions-of-sale/terms.html">이용약관</a></li>
+                        <li><a href="https://www.yslbeautykr.com/ko_KR/개인정보처리방침/privacy_policy.html">개인정보취급방침</a></li>
+                    </ul>
+                    <p class="copyright">Copyrights 2020. jeong. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <div id="it1" class="it_pop">
+            <div class="item_pop">
+                <div class="pop_head">
+                    <h3 class="pop_tit">배스트셀러1</h3>
+                    <a href="#" class="pop_close">X</a>
+                </div>
+                <div class="pop_item_box">
+                    <img src="./shop/bestseller/face2.jpg" alt="베스트셀러1">
+                    <h2 class="pop_item_tit">르 쿠션 엉크르 드 뽀</h2>
+                    <p class="pop_item_com">잉크 쿠션 : 82,000원</p>
+                </div>
+            </div>
+        </div>
+        <div id="it2" class="it_pop">
+            <div class="item_pop">
+                <div class="pop_head">
+                    <h3 class="pop_tit">베스트셀러2</h3>
+                    <a href="#" class="pop_close">X</a>
+                </div>
+                <div class="pop_item_box">
+                    <img src="./shop/bestseller/lip1.png" alt="베스트셀러2">
+                    <h2 class="pop_item_tit">베르니 아 레브르</h2>
+                    <p class="pop_item_com">클래식 틴트 : 46,000원</p>
+                </div>
+            </div>
+        </div>
+        <div id="it3" class="it_pop">
+            <div class="item_pop">
+                <div class="pop_head">
+                    <h3 class="pop_tit">베스트셀러3</h3>
+                    <a href="#" class="pop_close">X</a>
+                </div>
+                <div class="pop_item_box">
+                    <img src="./shop/bestseller/lip2.jpg" alt="베스트셀러3">
+                    <h2 class="pop_item_tit">따뚜아쥬 꾸뛰르</h2>
+                    <p class="pop_item_com">타투 틴트 : 46,000원</p>
+                </div>
+            </div>
+        </div>
+        <div id="it4" class="it_pop">
+            <div class="item_pop">
+                <div class="pop_head">
+                    <h3 class="pop_tit">베스트셀러4</h3>
+                    <a href="#" class="pop_close">X</a>
+                </div>
+                <div class="pop_item_box">
+                    <img src="./shop/bestseller/lip3.jpg" alt="베스트셀러4">
+                    <h2 class="pop_item_tit">루쥬 쀠르 꾸뛰르 더 슬림</h2>
+                    <p class="pop_item_com">매트 립스틱 : 47,000원</p>
+                </div>
+            </div>
+        </div>
+        <div id="it5" class="it_pop">
+            <div class="item_pop">
+                <div class="pop_head">
+                    <h3 class="pop_tit">페이스1</h3>
+                    <a href="#" class="pop_close">X</a>
+                </div>
+                <div class="pop_item_box">
+                    <img src="./shop/face/face1.jpg" alt="페이스1">
+                    <h2 class="pop_item_tit">뚜쉬 에끌라 르땡 크림</h2>
+                    <p class="pop_item_com">르땡 크림 파운데이션 : 79,000원</p>
+                </div>
+            </div>
+        </div>
+        <div id="it6" class="it_pop">
+            <div class="item_pop">
+                <div class="pop_head">
+                    <h3 class="pop_tit">페이스2</h3>
+                    <a href="#" class="pop_close">X</a>
+                </div>
+                <div class="pop_item_box">
+                    <img src="./shop/face/face2.jpg" alt="페이스2">
+                    <h2 class="pop_item_tit">뚜쉬 에끌라 블러 프라이머</h2>
+                    <p class="pop_item_com">뚜쉬 에끌라 블러 프라이머 : 79,000원</p>
+                </div>
+            </div>
+        </div>
+        <div id="it7" class="it_pop">
+            <div class="item_pop">
+                <div class="pop_head">
+                    <h3 class="pop_tit">페이스3</h3>
+                    <a href="#" class="pop_close">X</a>
+                </div>
+                <div class="pop_item_box">
+                    <img src="./shop/face/face3.jpg" alt="페이스3">
+                    <h2 class="pop_item_tit">3D 올오버 글로우</h2>
+                    <p class="pop_item_com">3D 올오버 글로우 : 87,000원</p>
+                </div>
+            </div>
+        </div>
+        <div id="it8" class="it_pop">
+            <div class="item_pop">
+                <div class="pop_head">
+                    <h3 class="pop_tit">페이스4</h3>
+                    <a href="#" class="pop_close">X</a>
+                </div>
+                <div class="pop_item_box">
+                    <img src="./shop/face/face4.jpg" alt="페이스4">
+                    <h2 class="pop_item_tit">올아워 세팅 파우더</h2>
+                    <p class="pop_item_com">올아워 파우더 : 82,000원</p>
+                </div>
+            </div>
+        </div>
+        <div id="it9" class="it_pop">
+            <div class="item_pop">
+                <div class="pop_head">
+                    <h3 class="pop_tit">립1</h3>
+                    <a href="#" class="pop_close">X</a>
+                </div>
+                <div class="pop_item_box">
+                    <img src="./shop/lip/lip1.jpg" alt="립1">
+                    <h2 class="pop_item_tit">따뚜아쥬 꾸뛰르 벨벳 틴트</h2>
+                    <p class="pop_item_com">벨벳 틴트 : 47,000원</p>
+                </div>
+            </div>
+        </div>
+        <div id="it10" class="it_pop">
+            <div class="item_pop">
+                <div class="pop_head">
+                    <h3 class="pop_tit">립2</h3>
+                    <a href="#" class="pop_close">X</a>
+                </div>
+                <div class="pop_item_box">
+                    <img src="./shop/lip/lip2.jpg" alt="립2">
+                    <h2 class="pop_item_tit">루쥬 볼륍떼 샤인</h2>
+                    <p class="pop_item_com">팝아트 컬렉션 : 47,000원</p>
+                </div>
+            </div>
+        </div>
+        <div id="it11" class="it_pop">
+            <div class="item_pop">
+                <div class="pop_head">
+                    <h3 class="pop_tit">립3</h3>
+                    <a href="#" class="pop_close">X</a>
+                </div>
+                <div class="pop_item_box">
+                    <img src="./shop/lip/lip3.jpg" alt="립3">
+                    <h2 class="pop_item_tit">주류 쀠르 꾸뛰르</h2>
+                    <p class="pop_item_com">팝아트 컬렉션 : 47,000원</p>
+                </div>
+            </div>
+        </div>
+        <div id="it12" class="it_pop">
+            <div class="item_pop">
+                <div class="pop_head">
+                    <h3 class="pop_tit">립4</h3>
+                    <a href="#" class="pop_close">X</a>
+                </div>
+                <div class="pop_item_box">
+                    <img src="./shop/lip/lip4.jpg" alt="립4">
+                    <h2 class="pop_item_tit">루쥬 볼륍떼 샤인</h2>
+                    <p class="pop_item_com">2020 스프링 룩 : 46,000원</p>
+                </div>
+            </div>
+        </div>
+        <div id="it13" class="it_pop">
+            <div class="item_pop">
+                <div class="pop_head">
+                    <h3 class="pop_tit">아이1</h3>
+                    <a href="#" class="pop_close">X</a>
+                </div>
+                <div class="pop_item_box">
+                    <img src="./shop/eye/eye1.jpg" alt="아이1">
+                    <h2 class="pop_item_tit">꾸뛰르 팔레트</h2>
+                    <p class="pop_item_com">5 컬러 아이섀도 팔레트 : 87,000원</p>
+                </div>
+            </div>
+        </div>
+        <div id="it14" class="it_pop">
+            <div class="item_pop">
+                <div class="pop_head">
+                    <h3 class="pop_tit">아이2</h3>
+                    <a href="#" class="pop_close">X</a>
+                </div>
+                <div class="pop_item_box">
+                    <img src="./shop/eye/eye2.jpg" alt="아이2">
+                    <h2 class="pop_item_tit">데생 드 르갸르 워터프루프</h2>
+                    <p class="pop_item_com">워터프루프 펜슬 아이라이너 : 34,000원</p>
+                </div>
+            </div>
+        </div>
+        <div id="it15" class="it_pop">
+            <div class="item_pop">
+                <div class="pop_head">
+                    <h3 class="pop_tit">아이3</h3>
+                    <a href="#" class="pop_close">X</a>
+                </div>
+                <div class="pop_item_box">
+                    <img src="./shop/eye/eye4.jpg" alt="아이3">
+                    <h2 class="pop_item_tit">꾸뛰르 아이라이너</h2>
+                    <p class="pop_item_com">리퀴드 아이라이너 : 45,000원</p>
+                </div>
+            </div>
+        </div>
+        <div id="it16" class="it_pop">
+            <div class="item_pop">
+                <div class="pop_head">
+                    <h3 class="pop_tit">아이4</h3>
+                    <a href="#" class="pop_close">X</a>
+                </div>
+                <div class="pop_item_box">
+                    <img src="./shop/eye/eye5.jpg" alt="아이4">
+                    <h2 class="pop_item_tit">마스카라 볼륨 에페 포 실 더 컬러</h2>
+                    <p class="pop_item_com">컬링 마스카라 : 45,000원</p>
+                </div>
+            </div>
+        </div>
+        <div id="it17" class="it_pop">
+            <div class="item_pop">
+                <div class="pop_head">
+                    <h3 class="pop_tit">악세서리1</h3>
+                    <a href="#" class="pop_close">X</a>
+                </div>
+                <div class="pop_item_box">
+                    <img src="./shop/accessory/accessory1.jpeg" alt="악세서리1">
+                    <h2 class="pop_item_tit">르 쿠션 엉크르 드 뽀 어플리케이터</h2>
+                    <p class="pop_item_com">쿠션 어플리케이터 : 11,000원</p>
+                </div>
+            </div>
+        </div>
+        <div id="it18" class="it_pop">
+            <div class="item_pop">
+                <div class="pop_head">
+                    <h3 class="pop_tit">악세서리2</h3>
+                    <a href="#" class="pop_close">X</a>
+                </div>
+                <div class="pop_item_box">
+                    <img src="./shop/accessory/accessory2.jpg" alt="악세서리2">
+                    <h2 class="pop_item_tit">컨투어링 브러쉬</h2>
+                    <p class="pop_item_com">브러쉬 : 75,000원</p>
+                </div>
+            </div>
+        </div>
+        <div id="it19" class="it_pop">
+            <div class="item_pop">
+                <div class="pop_head">
+                    <h3 class="pop_tit">악세서리3</h3>
+                    <a href="#" class="pop_close">X</a>
+                </div>
+                <div class="pop_item_box">
+                    <img src="./shop/accessory/accessory3.jpg" alt="악세서리3">
+                    <h2 class="pop_item_tit">폴리싱 파운데이션 브러쉬</h2>
+                    <p class="pop_item_com">브러쉬 : 82,000원</p>
+                </div>
+            </div>
+        </div>
+        <div id="it20" class="it_pop">
+            <div class="item_pop">
+                <div class="pop_head">
+                    <h3 class="pop_tit">악세서리4</h3>
+                    <a href="#" class="pop_close">X</a>
+                </div>
+                <div class="pop_item_box">
+                    <img src="./shop/accessory/accessory4.jpg" alt="악세서리4">
+                    <h2 class="pop_item_tit">올아워 파우더 스폰지</h2>
+                    <p class="pop_item_com">파우더 스폰지(2개입) : 15,000원</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+@charset "UTF-8";
+h2	{
+	text-align:center;
+}
+form {
+	text-align:center;
+}
+table {
+	margin-bottom: 30px;
+	border:solid 1px;
+}
+table td {
+	text-align:left;
+	width: 100px;
+	border:solid 1px;
+}
+table tr {
+	height: 30px;
+}

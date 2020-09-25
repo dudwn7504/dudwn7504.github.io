@@ -1,0 +1,14 @@
+@charset "utf-8";
+h2 {
+	text-align:center;
+}
+.join_form {
+	text-align:center;
+}
+.join_tb tr {
+	height: 50px;
+}
+.join_tb {
+	text-align:center;
+	margin-bottom: 20px;
+}

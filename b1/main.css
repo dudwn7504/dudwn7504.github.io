@@ -5,6 +5,7 @@
     clear: both;
     width: 100%;
     overflow: hidden;
+    position: relative;
 }
 
 .ban {
@@ -16,6 +17,35 @@
     width: 25%;
     margin: 0 auto;
     float: left;
+}
+
+.ban_btn_box_l {
+    position: absolute;
+    top: 200px;
+    z-index: 9999;
+}
+
+.ban_btn_box_r {
+    position: absolute;
+    right: 0px;
+    top: 200px;
+    z-index: 9999;
+}
+
+.ban_left_btn {
+    background-image: url(./font_icon/etcIcon.png); 
+    width: 50px; height: 70px;
+    background-position: -112px -200px; 
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.ban_right_btn {
+    background-image: url(./font_icon/etcIcon.png); 
+    width: 50px; height: 70px;
+    background-position: -170px -200px; 
+    background-repeat: no-repeat;
+    cursor: pointer;
 }
 
 .tit_tank {
@@ -264,6 +294,37 @@
     clear: both;
     width: 100%;
     overflow: hidden;
+    position: relative;
+}
+
+.tuto_ban_btn_box_l {
+    position: absolute;
+    top: 240px;
+    left: 20px;
+    z-index: 9999;
+}
+
+.tuto_ban_left_btn {
+    background-image: url(./font_icon/etcIcon.png); 
+    width: 30px; height: 40px;
+    background-position: -350px -180px; 
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.tuto_ban_btn_box_r {
+    position: absolute;
+    right: 100px;
+    top: 240px;
+    z-index: 9999;
+}
+
+.tuto_ban_right_btn {
+    background-image: url(./font_icon/etcIcon.png); 
+    width: 30px; height: 40px;
+    background-position: -380px -180px; 
+    background-repeat: no-repeat;
+    cursor: pointer;
 }
 
 .tuto_vs_ban {

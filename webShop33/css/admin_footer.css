@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+* {margin: 0; padding: 0;}
+body, html {width: 100%; height: 100%;}
+ul {list-style:none;}
+a {text-decoration: none;}
+button, label, input { outline:0; border:0; user-select:none;}
+img {border:0;}
+
+.ft {clear: both; min-height: 120px; padding-top: 70px;}
+.tit {font-size: 48px; text-align: center; line-height: 80px;}
+.ft_link {clear: both; height: 60px; line-height: 60px; background-color: #f27900; padding-left: 30px;}
+.ft_link li {float: left; width: 170px; height: 60px; line-height: 60px;}
+.ft_link a {display: block; text-align: center; line-height: 60px; height: 60px;
+	color:#fff; }
+.admin_copy {
+	width: 100%;
+}
+.copyright {
+	padding-top: 50px; padding-bottom: 50px;
+	width: 1280px; margin: 0 auto;
+	
+}

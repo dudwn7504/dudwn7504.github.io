@@ -1,0 +1,9 @@
+@charset "UTF-8";
+.menu a {
+	display: block;
+	border-radius: 7px;
+	padding: 0 10px; 
+}
+.main_img {
+	 width: 100%; height: vh; margin: 0 auto;
+}

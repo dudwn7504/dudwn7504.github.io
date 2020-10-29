@@ -1,0 +1,250 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+}
+body,html {
+    width: 100%;
+}
+ul,li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.wrap {
+    position: relative;
+}
+.menu {
+
+    position: fixed;
+    right: 10px; top: 100px;
+    z-index: 999;
+    background: rgb(211, 255, 249);
+    border-radius: 20px;
+}
+.menu li {
+    height: 150px;
+    line-height: 150px;
+}
+ .menu li a {
+     margin: 0 7px;
+ }
+ .menu li a:hover {
+     font-weight: bold;
+ }
+ .on {
+     font-weight: bold;
+ }
+
+ #page1{
+     background: rgb(146, 190, 255);
+ }
+ .hi1 {
+    font-size: 30px;
+    padding: 20px 30px;
+ }
+ .hi2 {
+     clear: both;
+     text-align: center;
+     font-size: 90px;
+     padding: 150px;
+     padding-bottom: 400px;
+ }
+.con_tit {
+    text-align: center;
+    padding: 80px;
+    margin-top: 30px;
+    font-size: 45px;
+}
+.profile {
+    position: relative;
+    width: 920px;
+    margin: 0 auto;
+}
+.pic {
+    display: inline-block;
+    width: 400px;
+    border: 1px solid #666;
+}
+.introduce {
+    position: absolute;
+    right: 0px; top: 10px;
+    display: inline-block;
+    width: 450px;
+}
+.tb_tr {
+    height: 50px;
+    line-height: 50px;
+}
+.tb_tr th {
+    width: 130px;
+    font-size: 20px;
+}
+.tb_tr td {
+    font-size: 20px;
+}
+
+#page2 {
+    clear: both;
+    width: 100%;
+    display: block;
+    height: 1070px;
+    margin-bottom: 100px;
+}
+.mycapa {
+    clear: both;
+    width: 1280px;
+    margin: 0 auto;
+}
+.capa_lst li{
+    display: inline-block;
+    width: 180px;
+    float: left;
+}
+.capa_lst img {
+    display: inline-block;
+    margin-left: 22px;
+}
+.capa_lst li p {
+    text-align: center;
+    margin-top: 10px;
+}
+.lan_tit {
+    font-size: 20px;
+    font-weight: bold;
+}
+.mycapa_tit {
+    margin-top: 150px;
+    margin-bottom: 90px;
+    text-align: center;
+    font-size: 45px;
+}
+
+#page3 {
+    clear: both;
+    display: block;
+    width: 100%;
+    /* padding-top: 30px; */
+}
+.portpage_tit {
+    clear: both;
+    text-align: center;
+    font-size: 30px;
+    height: 90px;
+    line-height: 70px;
+}
+.portpage_con {
+    clear: both;
+    width: 900px;
+    margin: 0 auto;
+    height: 350px;
+}
+.portpage_img_box {
+    display: block;
+    position: relative;
+    z-index: 1;
+    float: left;
+    width: 450px;
+    height: 248px;
+    margin-left: 210px;
+    margin-right: 50px;
+    
+}
+.img_tit {
+    position: absolute;
+    display: block;
+    z-index: 99;
+    width: 450px;
+    height: 158px;
+    background-color: #666;
+    opacity: 0.6;
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 20px;
+    padding-top: 90px;
+}
+.portpage_img {
+    position: absolute;
+    z-index: 0;
+    box-shadow: 10px 10px 5px 5px #ccc;
+    float: left;
+    border-radius: 20px;
+}
+.img_before {
+    opacity: 0.7;
+}
+.portpage_txt {
+    display: none;
+}
+.portpage_tb {
+    font-size: 18px;
+}
+.portpage_tb th {
+    width: 90px;
+    text-align: left;
+    height: 30px;
+    line-height: 30px;
+}
+.shop {
+    height: 700px;
+}
+.com {
+    height: 800px;
+}
+.pub {
+
+}
+.go_page {
+    
+}
+.go_page:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#page4 {
+    clear: both;
+}
+.contact_con {
+    width: 400px;
+    height: 600px;
+    margin: 0 auto;
+}
+.contact_tb th {
+    width: 120px;
+    height: 100px;
+}
+.contact_tb td {
+    font-size: 24px;
+}
+
+/* 스킬css */
+body {
+    
+    font-family: 'Source Sans Pro',sans-serif;;
+    }
+
+.container {
+    clear: both;
+    display: block;
+    text-align: center;
+}
+
+.chart {
+    position: relative;
+    display: inline-block;
+    margin: 10px 7px;
+    color: #999;
+    font-size:18px;
+    text-align: center;
+    font-weight:bold;
+}
+.chart canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

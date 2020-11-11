@@ -7,10 +7,13 @@ $(function() {
         $("html,body").animate({ scrollTop: 750* $(this).index() });
     });
     $(".menu li:eq(2)").click(function(){
-        $("html,body").animate({ scrollTop: 930* $(this).index() });
+        $("html,body").animate({ scrollTop: 770* $(this).index() });
     });
     $(".menu li:eq(3)").click(function(){
-        $("html,body").animate({ scrollTop: 1300* $(this).index() });
+        $("html,body").animate({ scrollTop: 860* $(this).index() });
+    });
+    $(".menu li:eq(4)").click(function(){
+        $("html,body").animate({ scrollTop: 1115* $(this).index() });
     });
     // $(".menu li:last").click(function(){
     //     $("html,body").animate({ scrollTop: 1420* $(this).index() });
@@ -25,28 +28,38 @@ $(document).ready(function() {
         var menu2 = menu1+$("#page2").height();
         var menu3 = menu2+$("#page3").height();
         var menu4 = menu3+$("#page4").height();
+        var menu5 = menu4+$("#page5").height();
 
         if(idx < menu1) {
             $("#intro").addClass("on");
             $("#profile").removeClass("on");
+            $("#myAbility").removeClass("on");
             $("#portfolio").removeClass("on");
             $("#contact").removeClass("on");
         } else if(idx < menu2) {
             $("#profile").addClass("on");
             $("#intro").removeClass("on");
+            $("#myAbility").removeClass("on");
             $("#portfolio").removeClass("on");
             $("#contact").removeClass("on");
         } else if(idx < menu3) {
+            $("#myAbility").addClass("on");
+            $("#intro").removeClass("on");
+            $("#profile").removeClass("on");
+            $("#portfolio").removeClass("on");
+            $("#contact").removeClass("on");
+        } else if(idx < menu4) {
             $("#portfolio").addClass("on");
             $("#intro").removeClass("on");
             $("#profile").removeClass("on");
+            $("#myAbility").removeClass("on");
             $("#contact").removeClass("on");
-        } else if(idx < menu4) {
+        } else if(idx < menu5) {
             $("#contact").addClass("on");
             $("#intro").removeClass("on");
             $("#profile").removeClass("on");
             $("#portfolio").removeClass("on");
-
+            $("#myAbility").removeClass("on");
         } 
     });
 });

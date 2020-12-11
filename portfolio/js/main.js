@@ -4,7 +4,7 @@ $(function() {
     $("html,body").animate({ scrollTop: 1200* $(this).index() });
     });
     $(".menu li:eq(1)").click(function(){
-        $("html,body").animate({ scrollTop: 750* $(this).index() });
+        $("html,body").animate({ scrollTop: 755* $(this).index() });
     });
     $(".menu li:eq(2)").click(function(){
         $("html,body").animate({ scrollTop: 770* $(this).index() });

@@ -1,0 +1,28 @@
+@charset "utf-8";
+h2 {
+	text-align:center;
+}
+.join_box {
+	width: 450px;
+	margin: 0 auto;
+	padding-top: 180px;
+	padding-bottom: 70px;
+}
+.join_form {
+	width: 500px;
+}
+.join_tb tr {
+	height: 50px;
+}
+.join_tb th {
+	width: 100px;
+}
+.join_tb td {
+	width: 350px;
+}
+.join_tb {
+	text-align:center;
+	margin-bottom: 20px;
+	margin-top: 40px;
+	width: 450px;
+}

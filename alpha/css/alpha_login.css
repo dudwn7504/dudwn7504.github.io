@@ -1,0 +1,21 @@
+@charset "UTF-8";
+h2	{
+	text-align:center;
+}
+table {
+	margin-bottom: 20px;
+}
+form {
+	text-align:center;
+}
+.login_form {
+	clear: both;
+	display: block;
+	width: 300px;
+	margin: 0 auto;
+	padding-top: 180px;
+	padding-bottom: 70px;
+}
+.join_tb {
+	width: 350px;
+}

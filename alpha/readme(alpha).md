@@ -344,7 +344,7 @@ function delMem() {
 * * *
 
 + ### 내(회원)정보수정 화면
-![내(회원)정보조회 화면](./readme(alpha)/myEdit.png)
+![내(회원)정보 화면](./readme(alpha)/myedit.png)
 + ### 내(회원)정보수정 처리코드
 ```
 <!DOCTYPE html>
@@ -401,7 +401,7 @@ location.href = "memberInfo.jsp";
 * * *
 
 + ### 회원탈퇴 화면
-![회웡탈퇴 화면](./readme(alpha)/delMember.png)
+![회탈퇴 화면](./readme(alpha)/delMember.png)
 + ### 회원탈퇴 처리코드
 ```
 <%

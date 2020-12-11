@@ -45,8 +45,8 @@ public int loginCheck(String id, String pwd) {
 * * *
 + #### 회원가입 화면
 ![회원가입 화면](./readme(gilbut)/join.png)
-	+ #### MemberDAO(회원가입)
-	```
++ #### MemberDAO(회원가입)
+```
 	public void addMember(MemberBean memberBean) {
 		try {
 			con = dataFactory.getConnection();

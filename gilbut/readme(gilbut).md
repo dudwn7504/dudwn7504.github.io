@@ -9,7 +9,7 @@
 + ### 로그인 화면
 ![로그인 화면](./readme(gilbut)/login.png)
   + #### MemberDAO(로그인)
-'''
+  ```
 public int loginCheck(String id, String pwd) {
 		String dbPw = "";
 		int x = -1;
@@ -41,4 +41,4 @@ public int loginCheck(String id, String pwd) {
 		}
 		return x;
 	}
-  '''
+  ```

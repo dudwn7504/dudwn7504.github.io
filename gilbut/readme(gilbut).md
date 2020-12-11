@@ -119,7 +119,7 @@ public MemberBean userInfo(String id) {
 * * *
 
 + #### 내(회원))정보 수정 화면
-![내(회원)정보 수정 화면](./readme(gilbut)/home(login).png)
+![내(회원)정보 수정 화면](./readme(gilbut)/myedit.png)
 + #### MemberDAO(내(회원)정보 수정)
 ```
 public void updateMember(String pwd, String name, String email, String address, String phone, String id) {

@@ -174,8 +174,8 @@ public void delMember(MemberBean memberBean) {
 ```
 * * *
 
-+ ### QnA목록 화면
-![QnA목록 화면](./readme(gilbut)/qna.png)
++ ### QnA(게시글)목록 화면
+![QnA(게시글)목록 화면](./readme(gilbut)/qna.png)
 + ### QnaDAO(QnA목록)
 ```
 public List<QnaBean> qnaList() {
@@ -209,3 +209,33 @@ public List<QnaBean> qnaList() {
 	}
 ```
 * * *
+
++ ### QnA(게시글)작성 화면
+![QnA(게시글)작성 화면](./readme(gilbut)/qnaWrite.png)
++ ### QnaDAO(QnA작성)
+```
+public void addQna(QnaBean qnaBean) {
+		try {
+			con = dataFactory.getConnection();
+			String id = qnaBean.getId();
+			String title = qnaBean.getTitle();
+			String content = qnaBean.getContent();
+			String writeDate = qnaBean.getWriteDate();
+			String query = "insert into qna";
+			query += " (id,title,content,writeDate)";
+			query += " values(?,?,?,?)";
+			System.out.println("prepareStatememt: " + query);
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, id);
+			pstmt.setString(2, title);
+			pstmt.setString(3, content);
+			pstmt.setString(4, writeDate);
+			pstmt.executeUpdate();
+			System.out.println("저장완료");
+			pstmt.close();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+```

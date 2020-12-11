@@ -80,4 +80,38 @@ public int loginCheck(String id, String pwd) {
 * * *
 + #### 메인화면(로그인)
 ![메인화면(로그인)](./readme(gilbut)/home(login).png)
+* * *
 
++ #### 내(회원)정보 조회
+![메인화면(로그인)](./readme(gilbut)/myinfo.png)
++ #### MemberDAO(내(회원)정보 조회)
+```
+public MemberBean userInfo(String id) {
+		MemberBean member = null;
+		try {
+			con = dataFactory.getConnection();
+			String query = "select * from member where id=?";
+			System.out.println(query+"가 실행됨.");
+			
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, id);
+			ResultSet rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				member = new MemberBean();
+				member.setId(id);
+				member.setPwd(rs.getString("pwd"));
+				member.setName(rs.getString("name"));
+				member.setEmail(rs.getString("email"));
+				member.setAddress(rs.getString("address"));
+				member.setPhone(rs.getString("phone"));
+				member.setJoinDate(rs.getString("joindate"));
+			}
+			pstmt.close();
+			con.close();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return member;
+	
+	}

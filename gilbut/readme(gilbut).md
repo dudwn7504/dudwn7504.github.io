@@ -150,3 +150,26 @@ public void updateMember(String pwd, String name, String email, String address, 
 	}
 ```
 * * *
++ #### 회원탈퇴 화면
+![회원탈퇴 화면](./readme(gilbut)/delMember.png)
++ #### MemberDAO(회원탈퇴)
+```
+public void delMember(MemberBean memberBean) {
+		try {
+			con = dataFactory.getConnection();
+			String id = memberBean.getId();
+			String pwd = memberBean.getPwd();
+			String query = "delete from member" + " where id=? and pwd=?";
+			System.out.println("prepareStatememt:" + query);
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pwd);
+			pstmt.executeUpdate();
+			pstmt.close();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+```
+* * *

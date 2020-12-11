@@ -3,10 +3,10 @@
 + ### 개발언어 : HTML, CSS, jQuery, Javascript, JSP
 + ### 개발환경 : jdk1.8.0, Eclipse IDE(2020-03 (4.15.0)), Oracle Database 11g Express Edition Release 11.2.0.2.0, Apache Tomcat 9.0
 * * *
-+ #### 메인화면
++ ### 메인화면
 ![메인홈 ](./readme(gilbut)/home.png)
 * * *
-+ #### 로그인 화면
++ ### 로그인 화면
 ![로그인 화면](./readme(gilbut)/login.png)
   + #### MemberDAO(로그인)
   ```
@@ -43,9 +43,9 @@ public int loginCheck(String id, String pwd) {
 	}
   ```
 * * *
-+ #### 회원가입 화면
++ ### 회원가입 화면
 ![회원가입 화면](./readme(gilbut)/join.png)
-+ #### MemberDAO(회원가입)
++ ### MemberDAO(회원가입)
 ```
 	public void addMember(MemberBean memberBean) {
 		try {
@@ -78,11 +78,11 @@ public int loginCheck(String id, String pwd) {
 	}
 ```
 * * *
-+ #### 메인화면(로그인)
++ ### 메인화면(로그인)
 ![메인화면(로그인)](./readme(gilbut)/home(login).png)
 * * *
 
-+ #### 내(회원)정보 조회 화면
++ ### 내(회원)정보 조회 화면
 ![내(회원)정보 조회 화면](./readme(gilbut)/myinfo.png)
 + #### MemberDAO(내(회원)정보 조회)
 ```
@@ -118,9 +118,9 @@ public MemberBean userInfo(String id) {
 ```
 * * *
 
-+ #### 내(회원))정보 수정 화면
++ ### 내(회원))정보 수정 화면
 ![내(회원)정보 수정 화면](./readme(gilbut)/myedit.png)
-+ #### MemberDAO(내(회원)정보 수정)
++ ### MemberDAO(내(회원)정보 수정)
 ```
 public void updateMember(String pwd, String name, String email, String address, String phone, String id) {
 		
@@ -150,9 +150,9 @@ public void updateMember(String pwd, String name, String email, String address, 
 	}
 ```
 * * *
-+ #### 회원탈퇴 화면
++ ### 회원탈퇴 화면
 ![회원탈퇴 화면](./readme(gilbut)/delMember.png)
-+ #### MemberDAO(회원탈퇴)
++ ### MemberDAO(회원탈퇴)
 ```
 public void delMember(MemberBean memberBean) {
 		try {
@@ -170,6 +170,42 @@ public void delMember(MemberBean memberBean) {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+```
+* * *
+
++ ### QnA목록 화면
+![QnA목록 화면](./readme(gilbut)/qna.png)
++ ### QnaDAO(QnA목록)
+```
+public List<QnaBean> qnaList() {
+		List<QnaBean> list = new ArrayList<QnaBean>();
+		try {
+			// connDB();
+			con = dataFactory.getConnection();
+			String query = "select * from qna ";
+			System.out.println("prepareStatememt: " + query);
+			pstmt = con.prepareStatement(query);
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				String id = rs.getString("id");
+				String title = rs.getString("title");
+				String content = rs.getString("content");
+				String writeDate = rs.getString("writeDate");
+				QnaBean mb = new QnaBean();
+				mb.setId(id);
+				mb.setTitle(title);
+				mb.setContent(content);
+				mb.setWriteDate(writeDate);
+				list.add(mb);
+			}
+			rs.close();
+			pstmt.close();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
 	}
 ```
 * * *

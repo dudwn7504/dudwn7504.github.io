@@ -77,3 +77,7 @@ public int loginCheck(String id, String pwd) {
 		}
 	}
 ```
+* * *
++ #### 메인화면(로그인)
+![메인화면(로그인)](./readme(gilbut)/home(login).png)
+

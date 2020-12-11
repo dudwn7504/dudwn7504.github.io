@@ -6,7 +6,7 @@
 + #### 메인화면
 ![메인홈 ](./readme(gilbut)/home.png)
 * * *
-+ ### 로그인 화면
++ #### 로그인 화면
 ![로그인 화면](./readme(gilbut)/login.png)
   + #### MemberDAO(로그인)
   ```
@@ -42,3 +42,38 @@ public int loginCheck(String id, String pwd) {
 		return x;
 	}
   ```
+* * *
++ #### 회원가입 화면
+![회원가입 화면](./readme(gilbut)/join.png)
+	+ #### MemberDAO(회원가입)
+	```
+	public void addMember(MemberBean memberBean) {
+		try {
+			con = dataFactory.getConnection();
+			String id = memberBean.getId();
+			String pwd = memberBean.getPwd();
+			String name = memberBean.getName();
+			String phone = memberBean.getPhone();
+			String email = memberBean.getEmail();
+			String address = memberBean.getAddress();
+			String joinDate = memberBean.getJoinDate();
+			String query = "insert into member";
+			query += " (id,pwd,name,phone,email,address,joinDate)";
+			query += " values(?,?,?,?,?,?,?)";
+			System.out.println("prepareStatememt: " + query);
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pwd);
+			pstmt.setString(3, name);
+			pstmt.setString(4, phone);
+			pstmt.setString(5, email);
+			pstmt.setString(6, address);
+			pstmt.setString(7, joinDate);
+			pstmt.executeUpdate();
+			pstmt.close();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	```

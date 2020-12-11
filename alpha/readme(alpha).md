@@ -343,3 +343,109 @@ function delMem() {
 ```
 * * *
 
++ ### 내(회원)정보수정 화면
+![내(회원)정보조회 화면](./readme(alpha)/myEdit.png)
++ ### 내(회원)정보수정 처리코드
+```
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원정보수정 처리</title>
+<%
+request.setCharacterEncoding("utf-8");
+String custid = (String)session.getAttribute("custid");
+%>
+</head>
+<body>
+<%
+Connection con = null;
+PreparedStatement pstmt = null;
+ResultSet rs;
+
+
+try {
+	con = DBcon.getConnection();
+	String sql = "update custom_tbl set";
+	sql += " pw=?, author=?, phone=?, email=?, area=? where custid=?";
+	pstmt = con.prepareStatement(sql);
+	pstmt.setString(1, request.getParameter("pw"));
+	pstmt.setString(2, request.getParameter("author"));
+	pstmt.setString(3, request.getParameter("phone"));
+	pstmt.setString(4, request.getParameter("email"));
+	pstmt.setString(5, request.getParameter("area"));
+	pstmt.setString(6, custid);
+	rs = pstmt.executeQuery();
+} catch(Exception e) {
+	System.out.println("DB Connection error : "+e);
+} finally {
+	try {
+		if(pstmt!=null) pstmt.close();
+		if(con!=null) con.close();
+		%>
+		<script>
+		alert("회원정보수정이 정상적으로 이루어졌습니다.");
+		</script>
+		<%
+	} catch(Exception e) {
+		System.out.println("DB Close error : "+e);
+	}
+}
+%>
+<script>
+location.href = "memberInfo.jsp";
+</script>
+</body>
+</html>
+```
+* * *
+
++ ### 회원탈퇴 화면
+![회웡탈퇴 화면](./readme(alpha)/delMember.png)
++ ### 회원탈퇴 처리코드
+```
+<%
+request.setCharacterEncoding("utf-8");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CS·문의 삭제 처리</title>
+</head>
+<body>
+<%
+Connection con = null;
+PreparedStatement pstmt = null;
+ResultSet rs;
+String qnum;
+
+try {
+	con = DBcon.getConnection();
+	String sql = "delete from qna_tbl where qnum=?";
+	pstmt = con.prepareStatement(sql);
+	pstmt.setString(1, request.getParameter("qnum"));
+	rs = pstmt.executeQuery();
+} catch(Exception e) {
+	System.out.println("DB Connection error : "+e);
+} finally {
+	try {
+		if(pstmt!=null) pstmt.close();
+		if(con!=null) con.close();
+		System.out.println("해당글의 삭제가 완료되었습니다.");
+		%>
+		<script>
+		alert("해당글의 삭제가 완료되었습니다.");
+		location.href = "qnaList.jsp";
+		</script>
+		<%
+	} catch(Exception e) {
+		System.out.println("DB Close error : "+e);
+	}
+}
+%>
+</body>
+</html>
+```
+* * *
+

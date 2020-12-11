@@ -82,8 +82,8 @@ public int loginCheck(String id, String pwd) {
 ![메인화면(로그인)](./readme(gilbut)/home(login).png)
 * * *
 
-+ #### 내(회원)정보 조회
-![메인화면(로그인)](./readme(gilbut)/myinfo.png)
++ #### 내(회원)정보 조회 화면
+![내(회원)정보 조회 화면](./readme(gilbut)/myinfo.png)
 + #### MemberDAO(내(회원)정보 조회)
 ```
 public MemberBean userInfo(String id) {
@@ -114,6 +114,39 @@ public MemberBean userInfo(String id) {
 		}
 		return member;
 	
+	}
+```
+* * *
+
++ #### 내(회원))정보 수정 화면
+![내(회원)정보 수정 화면](./readme(gilbut)/home(login).png)
++ #### MemberDAO(내(회원)정보 수정)
+```
+public void updateMember(String pwd, String name, String email, String address, String phone, String id) {
+		
+		try {
+			con = dataFactory.getConnection();
+			String query = "update member set";
+			query += " pwd=?, name=?, email=?, address=?, phone=? where id=?";
+			System.out.println(query+"가 실행됨.");
+			
+			pstmt = con.prepareStatement(query);
+			con.setAutoCommit(false);
+			
+			pstmt.setString(1, pwd);
+			pstmt.setString(2, name);
+			pstmt.setString(3, email);
+			pstmt.setString(4, address);
+			pstmt.setString(5, phone);
+			pstmt.setString(6, id);
+			pstmt.executeUpdate();
+			con.commit();
+			
+			pstmt.close();
+			con.close();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 ```
 * * *

@@ -115,3 +115,5 @@ public MemberBean userInfo(String id) {
 		return member;
 	
 	}
+```
+* * *

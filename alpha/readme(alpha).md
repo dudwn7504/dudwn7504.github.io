@@ -449,3 +449,332 @@ try {
 ```
 * * *
 
++ ### QnA(게시판)리스트 화면
+![QnA(게시판)리스트 화면](./readme(alpha)/qnalist.png)
++ ### QnA(게시판)리스트조회 처리코드
+```
+<%
+request.setCharacterEncoding("utf-8");
+String id = (String)session.getAttribute("custid");
+SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
+%>
+
+<jsp:include page="header.jsp" />
+
+<form class="qnaForm" name="qnaForm" action="">
+	<h2>CS·문의 목록</h2>
+	<table class="qna_tb" border="1">
+		<thead>
+			<tr>
+				<th>글번호</th>
+				<th>아이디</th>
+				<th>제목</th>
+				<th>작성일자</th>
+			</tr>
+		</thead>
+		<tbody>
+			<%
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs;
+			String qnum = null;
+			String custid = null;
+			String qtit = null;
+			String wdate = null;
+			
+			try {
+				con = DBcon.getConnection();
+				String sql = "select qnum, custid, qtit, wdate from qna_tbl where custid=?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, id);
+				rs = pstmt.executeQuery();
+				while(rs.next()) {
+					qnum = rs.getString("qnum");
+					custid = rs.getString("custid");
+					qtit = rs.getString("qtit");
+					wdate = rs.getString("wdate");
+					%>
+					<tr>
+						<td><a href="qnaView.jsp?qnum=<%=qnum %>"><%=qnum %></a></td>
+						<td><%=custid %></td>
+						<td><%=qtit %></td>
+						<td><%=wdate %></td>
+					</tr>
+					<%
+				}
+				if(rs.getRow() == 0) {
+					%>
+					<tr>
+						<td colspan="4" class="qnaNon">등록된 문의글이 없습니다.</td>
+					</tr>
+					<%
+				}
+				
+			} catch(Exception e) {
+				System.out.println("DB Connection error : "+e);
+			} finally {
+				try {
+					if(pstmt!=null) pstmt.close();
+					if(con!=null) con.close();
+					System.out.println("문의 목록을 성공적으로 불러왔습니다.");
+				} catch(Exception e) {
+					System.out.println("DB Close error : "+e);
+				}
+			}
+			%>
+		</tbody>
+	</table>
+	<input type="button" value="홈으로" onclick="goHome()"/>
+	<input type="button" value="문의하기" onclick="writeQna()"/>
+</form>
+
+<script>
+function goHome() {
+	location.href = "index.jsp";	
+}
+
+function writeQna() {
+	location.href = "qnaWrite.jsp";
+}
+</script>
+
+<jsp:include page="footer.jsp" />
+```
+* * *
+
++ ### QnA(게시판)작성 화면
+![QnA(게시판)작성 화면](./readme(alpha)/qnaWrite.png)
++ ### QnA(게시판)작성 처리코드
+```
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CS·문의 등록 처리</title>
+</head>
+<body>
+<%
+Connection con = null;
+PreparedStatement pstmt = null;
+ResultSet rs;
+
+String custid, qtit, author, qcon, wdate;
+
+try {
+	con = DBcon.getConnection();
+	String sql = "insert into qna_tbl values(qna_seq.nextval, ?, ?, ?, ?, ?)";
+	pstmt = con.prepareStatement(sql);
+	pstmt.setString(1, request.getParameter("custid"));
+	pstmt.setString(2, request.getParameter("author"));
+	pstmt.setString(3, request.getParameter("qtit"));
+	pstmt.setString(4, request.getParameter("qcon"));
+	pstmt.setString(5, request.getParameter("wdate"));
+	rs = pstmt.executeQuery();
+} catch(Exception e) {
+	System.out.println("DB Connection error : "+e);
+} finally {
+	try {
+		if(pstmt!=null) pstmt.close();
+		if(con!=null) con.close();
+		System.out.println("문의글이 정상적으로 등록되었습니다.");
+		%>
+		<script>
+		alert("문의글이 정상적으로 작성되었습니다.");
+		location.href = "qnaList.jsp";
+		</script>
+		<%
+	} catch(Exception e) {
+		System.out.println("DB Close error : "+e);
+	}
+}
+%>
+</body>
+</html>
+```
+* * *
+
++ ### QnA(게시판)게시글 내용 화면
+![QnA(게시판)게시글 내용 화면](./readme(alpha)/qnaView.png)
++ ### QnA(게시판)게시글 내용조회 처리코드
+```
+<%
+request.setCharacterEncoding("utf-8");
+String qnum = request.getParameter("qnum");
+SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일");
+%>
+
+<jsp:include page="header.jsp"/>
+
+<form name="qnaViewForm" class="qnaViewForm" action="">
+	<h2>CS·문의 내용</h2>
+	<table class="qnaView_tb" border="1">
+		<tr>
+			<th rowspan="2"></th>
+			<th>글번호</th>
+			<th>제목</th>
+			<th>아이디(이름)</th>
+			<th>작성일자</th>
+		</tr>
+		<%
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs;
+		String custid, author, qtit, qcon = null;
+		Date wdate = null;
+		
+		try {
+			con = DBcon.getConnection();
+			String sql = "select * from qna_tbl where qnum=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, qnum);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				custid = rs.getString("custid");
+				qtit = rs.getString("qtit");
+				author = rs.getString("author");
+				wdate = rs.getDate("wdate");
+				qcon = rs.getString("qcon");
+		%>
+		<tr>
+			<td><%=qnum %></td>
+			<td><%=qtit %></td>
+			<td><%=custid %>(<%=author %>)</td>
+			<td><%=wdate %></td>
+		</tr>
+		<tr class="qcon">
+			<th>문의내용</th>
+			<td colspan="4" ><%=qcon %></td>
+		</tr>
+		<%
+			}
+		} catch(Exception e) {
+			System.out.println("DB Connection error : "+e);
+		} finally {
+			try {
+				if(pstmt!=null) pstmt.close();
+				if(con!=null) con.close();
+			} catch(Exception e) {
+				System.out.println("DB Close error : "+e);
+			}
+		}
+		%>
+	</table>
+	<input type="button" value="목록으로" onclick="goQnaList()"/>
+	<input type="button" value="수정하기" onclick="qnaEdit()"/>
+	<input type="button" value="삭제하기" onclick="qnaDelete()"/>
+</form>
+
+<script>
+function goQnaList() {
+	location.href = "qnaList.jsp";
+}
+
+function qnaEdit() {
+	location.href = "qnaEdit.jsp?qnum=<%=qnum%>";
+}
+
+function qnaDelete() {
+	location.href = "qnaDeletePro.jsp?qnum=<%=qnum%>";
+}
+</script>
+
+<jsp:include page="footer.jsp" />
+```
+* * *
+
++ ### QnA(게시판)게시글 수정 화면
+![QnA(게시판)게시글 수정 화면](./readme(alpha)/qnaEdit.png)
++ ### QnA(게시판)게시글 수정 처리코드
+```
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CS·문의 수정 처리</title>
+</head>
+<body>
+<%
+Connection con = null;
+PreparedStatement pstmt = null;
+ResultSet rs;
+String qnum = request.getParameter("qnum");
+String wdate = fm.format(nowDate);
+try {
+	con = DBcon.getConnection();
+	String sql = "update qna_tbl set";
+	sql += " qcon=?, wdate=? where qnum=?";
+	pstmt = con.prepareStatement(sql);
+	pstmt.setString(1, request.getParameter("qcon"));
+	pstmt.setString(2, wdate);
+	pstmt.setString(3, qnum);
+	rs = pstmt.executeQuery();
+	
+} catch(Exception e) {
+	System.out.println("DB Connection error : "+e);
+} finally {
+	try {
+		if(pstmt!=null) pstmt.close();
+		if(con!=null) con.close();
+		System.out.println("CS·문의 수정처리가 성공적으로 이루어졌습니다.");
+		%>
+		<script>
+		alert("CS·문의 수정처리가 성공적으로 이루어졌습니다.");
+		location.href = "qnaView.jsp?qnum=<%=qnum%>";
+		</script>
+		<%
+	} catch(Exception e) {
+		System.out.println("DB Close error : "+e);
+	}
+}
+%>
+</body>
+</html>
+```
+* * *
+
++ ### QnA(게시판)게시글 삭제 처리코드
+```
+<%
+request.setCharacterEncoding("utf-8");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CS·문의 삭제 처리</title>
+</head>
+<body>
+<%
+Connection con = null;
+PreparedStatement pstmt = null;
+ResultSet rs;
+String qnum;
+
+try {
+	con = DBcon.getConnection();
+	String sql = "delete from qna_tbl where qnum=?";
+	pstmt = con.prepareStatement(sql);
+	pstmt.setString(1, request.getParameter("qnum"));
+	rs = pstmt.executeQuery();
+} catch(Exception e) {
+	System.out.println("DB Connection error : "+e);
+} finally {
+	try {
+		if(pstmt!=null) pstmt.close();
+		if(con!=null) con.close();
+		System.out.println("해당글의 삭제가 완료되었습니다.");
+		%>
+		<script>
+		alert("해당글의 삭제가 완료되었습니다.");
+		location.href = "qnaList.jsp";
+		</script>
+		<%
+	} catch(Exception e) {
+		System.out.println("DB Close error : "+e);
+	}
+}
+%>
+</body>
+</html>
+```
